@@ -5,7 +5,10 @@ Proyecto número uno con python -- nuevas tecnologías, Jueves 6am.
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)    
 ## Temáticas encontradas
 * Uso general de Python
-* Uso, declaración e impresión de variables con Python.
+* Tipos de datos y generalidades.
+* Estructuras de control; ciclos y condicionales
+* Listas y tuplas
+* Métodos en listas
 ## Uso de la solución
 *** 
 Todos los derechos reservados [Juan Pablo Jaramillo](https://github.com/HotSauce96)
