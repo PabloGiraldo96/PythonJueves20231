@@ -1,0 +1,99 @@
+#Creando una clase en python
+
+class Person: 
+	def __init__(self, nombre, edad, ciudad):
+		self.nombre = nombre
+		self.edad = edad
+		self.ciudad = ciudad
+
+	def getInfo(self):
+		return f"{self.nombre} {self.edad} {self.ciudad}"
+	
+
+# Se crean objetos en python 
+
+personaUno = Person('Pedro', 25, 'Medellin')
+personaDos = Person('Maria', 40, 'Bogota')
+
+# Se imprimen y se muestran los atributos con getInfo()
+
+print(personaUno.getInfo())
+print(personaDos.getInfo())
+
+
+
+
+#Herencia 
+
+
+
+class Profesor (Person):
+	def __init__(self, nombre, edad, ciudad, asignatura):
+		super().__init__(nombre, edad, ciudad)
+		self.asignatura = asignatura
+	
+	def getInfo(self):
+		return f"El profesor {self.nombre} enseña la materia de {self.asignatura}"
+	
+
+profesorUno = Profesor('Jose', 33, 'Medellin', 'Programación Avanzada')
+profesorDos = Profesor('Luis', 43, 'Cali', 'Moviles')
+
+print(profesorUno.getInfo())
+print(profesorDos.getInfo())
+
+
+
+
+#Polimorfismo 
+
+
+
+class Mascota:
+	def __init__(self, nombre):
+		self.nombre= nombre
+	
+	def hablar(self):
+		pass
+		
+class Perro(Mascota):
+	def hablar(self):
+		return "Wooff"
+
+class Gato(Mascota):
+	def hablar(self):
+		return "Meow"
+
+class Marrano(Mascota):
+	def hablar(self):
+		return "ñomñomñom"
+	
+mis_mascotas =[Perro("Doggo"), Gato("Bruce"), Marrano("Loco")]
+
+for Mascota in mis_mascotas:
+	print (f"{Mascota.nombre} dice {Mascota.hablar()}")
+
+
+#Encapsulamiento 
+class BankAccount:
+#    def __init__(self, account_number, balance):
+#        self.__account_number = account_number
+#        self.__balance = balance
+#
+#    def get_balance(self):
+#        return self.__balance
+#
+#    def deposit(self, amount):
+#        self.__balance += amount
+#
+#    def withdraw(self, amount):
+#        if amount <= self.__balance:
+#            self.__balance -= amount
+#        else:
+#            print("Insufficient funds")
+#
+#my_account = BankAccount("12345", 1000)
+#print(my_account.get_balance())  # Output: 1000
+#my_account.withdraw(500)
+#print(my_account.get_balance())  # Output: 500
+##print(my_account.__balance)  # Error: 'BankAccount' object has no attribute '__balance'
