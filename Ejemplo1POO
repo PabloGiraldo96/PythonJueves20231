@@ -6,7 +6,7 @@ class Person:
 		self.edad = edad
 		self.ciudad = ciudad
 
-	def getInfo(self):
+	def mostrarInfo(self):
 		return f"{self.nombre} {self.edad} {self.ciudad}"
 	
 
@@ -15,10 +15,10 @@ class Person:
 personaUno = Person('Pedro', 25, 'Medellin')
 personaDos = Person('Maria', 40, 'Bogota')
 
-# Se imprimen y se muestran los atributos con getInfo()
+# Se imprimen y se muestran los atributos con mostrarInfo()
 
-print(personaUno.getInfo())
-print(personaDos.getInfo())
+print(personaUno.mostrarInfo())
+print(personaDos.mostrarInfo())
 
 
 
@@ -32,15 +32,15 @@ class Profesor (Person):
 		super().__init__(nombre, edad, ciudad)
 		self.asignatura = asignatura
 	
-	def getInfo(self):
+	def mostrarInfo(self):
 		return f"El profesor {self.nombre} enseña la materia de {self.asignatura}"
 	
 
 profesorUno = Profesor('Jose', 33, 'Medellin', 'Programación Avanzada')
 profesorDos = Profesor('Luis', 43, 'Cali', 'Moviles')
 
-print(profesorUno.getInfo())
-print(profesorDos.getInfo())
+print(profesorUno.mostrarInfo())
+print(profesorDos.mostrarInfo())
 
 
 
@@ -74,26 +74,30 @@ for Mascota in mis_mascotas:
 	print (f"{Mascota.nombre} dice {Mascota.hablar()}")
 
 
+
 #Encapsulamiento 
+
+
+
 class BankAccount:
-#    def __init__(self, account_number, balance):
-#        self.__account_number = account_number
-#        self.__balance = balance
-#
-#    def get_balance(self):
-#        return self.__balance
-#
-#    def deposit(self, amount):
-#        self.__balance += amount
-#
-#    def withdraw(self, amount):
-#        if amount <= self.__balance:
-#            self.__balance -= amount
-#        else:
-#            print("Insufficient funds")
-#
-#my_account = BankAccount("12345", 1000)
-#print(my_account.get_balance())  # Output: 1000
-#my_account.withdraw(500)
-#print(my_account.get_balance())  # Output: 500
-##print(my_account.__balance)  # Error: 'BankAccount' object has no attribute '__balance'
+    def __init__(self, account_number, balance):
+        self.__account_number = account_number
+        self.__balance = balance
+
+    def get_balance(self):
+        return self.__balance
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+        else:
+            print("Insufficient funds")
+
+my_account = BankAccount("12345", 10000)
+print(f'La cuenta tenía un saldo de: {my_account.get_balance()}')  # Output: 1000
+my_account.withdraw(7750)
+print(f'Después del reitiro, la cuenta ha quedado con un saldo de: {my_account.get_balance()}')  # Output: 500
+
